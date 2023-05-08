@@ -251,6 +251,7 @@ function formNewPokemon(e){
  async function pokemonPickedData(pickedPokemon){
 
   try{
+    
     const response=await fetch(`https://pokeapi.co/api/v2/pokemon/${pickedPokemon}`)
     const data=await response.json()
     console.log(data)
