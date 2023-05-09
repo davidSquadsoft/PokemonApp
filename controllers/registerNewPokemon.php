@@ -56,6 +56,7 @@ $move_f_effect=$_POST['move_f_effect'];
 
 $isSix = $mysqli->prepare("select count(id_pj) as cantidad from pokemon where id_pj=$id_pj and rancho=0");
 $isSix->execute();
+
 $resultisSix=$isSix->get_result();
 $validatisSix=$resultisSix->fetch_assoc();
 $rancho = $validatisSix['cantidad']<7 ? 0: 1;
