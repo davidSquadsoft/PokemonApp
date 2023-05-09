@@ -49,6 +49,7 @@ $move_e_tipo=$_POST['move_e_tipo'];
 $move_e_effect=$_POST['move_e_effect'];
 $move_f_name=$_POST['move_f_name'];
 $move_f_dmg=$_POST['move_f_dmg'];
+
 $move_f_elemento=$_POST['move_f_elemento'];
 $move_f_tipo=$_POST['move_f_tipo'];
 $move_f_effect=$_POST['move_f_effect'];
