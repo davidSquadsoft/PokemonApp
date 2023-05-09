@@ -168,4 +168,6 @@ $move_e_elemento,
 $move_f_elemento
  );
  $stmtRegisterPokemon->execute();
+
+ header("location:../dashboard");
  
