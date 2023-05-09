@@ -1,22 +1,23 @@
 <?php 
 $id_pj=$_GET['id_pj']; 
 ?>
-<form action="controllers/registerNewPj" class="pb-3 pt-3 text-start fs-6 ps-2 pe-2" id="form-register-pj" method='post'>
+<form action="controllers/registerNewPokemon" class="pb-3 pt-3 text-start fs-6 ps-2 pe-2" id="form-register-pj" method='post'>
   <div class="row">
-    <div class="col-12 ">
+    <div class="col-12 "> 
       <div class="text-center ">
         <h6 class="text-start fw-bolder">Agregar Nuevo Pokemon</h6>
       </div>
-      <div class="row  shadow-sm bg-body-tertiary  rounded pb-2 border border-1 mb-2">
+      <div class="row  shadow-sm   rounded pb-2 border border-1 mb-2">
         <div class="col-lg-6 col-12">
           <label class="form-label mt-2">Apodo </label>
-          <input type="text" class="form-control pt-0 pb-0 " value="" id="id-sprite-url-pokemon" name="spriteUrlPokemon" hidden>
+          <input type="text" class="form-control pt-0 pb-0 " id="id-sprite-url-pokemon" name="spriteUrlPokemon" hidden>
           <input type="text" class="form-control pt-0 pb-0 " name="apodo">
           <label class="form-label mt-2">Nombre del Pokemon</label>
           <input type="text" class="form-control pt-0 pb-0 " required name="name" list="list-pokemon" id='selected-pokemon-to-catch'>
           <input type="text" class="form-control pt-0 pb-0 " value="<?= $id_pj ?>" required name="id_pj" list="" id='' hidden>
-          <input type="text" class="form-control pt-0 pb-0 "   name="tipoA" list="" id='tipo-a' >
-          <input type="text" class="form-control pt-0 pb-0 "   name="tupoB" list="" id='tipo-b' >
+          <input type="number" class="form-control pt-0 pb-0 "  required  name="id_api_pokemon" list="" id='id-api-pokemon' hidden>
+          <input type="text" class="form-control pt-0 pb-0 "   name="tipoA" list="" id='tipo-a' hidden>
+          <input type="text" class="form-control pt-0 pb-0 "   name="tipoB" list="" id='tipo-b' hidden>
           <datalist id="list-pokemon">
 
 
@@ -32,30 +33,54 @@ $id_pj=$_GET['id_pj'];
           </div>
         </div>
       </div>
+      <div class="row fs-sm shadow-sm   rounded pb-2 border border-1 mb-2">
+        <div class="col-6">
+        <label class="form-label mt-2" for="">Habilidad </label>
+          <input type="text" name="habilidad" class='form-control pt-0 pb-0'id="">
+        </div>
+        <div class="col-6">
+        <label class="form-label mt-2" for="">Efecto </label>
+          <input type="text" name="efecto_habilidad" class='form-control pt-0 pb-0'id="">
+        </div>
+      </div>
+      <div class="row fs-sm shadow-sm   rounded pb-2 border border-1 mb-2">
+        <div class="col-4">
+        <label class="form-label mt-2" for="">Experiencia </label>
+          <input type="number" pattern="[1-9]" name="exp" class='form-control pt-0 pb-0'id="">
+        </div>
+        <div class="col-4">
+        <label class="form-label mt-2" for="">Nivel </label>
+          <input type="number" pattern="[1-9]" name="nivel" class='form-control pt-0 pb-0'id="">
+        </div>
+        <div class="col-4">
+        <label class="form-label mt-2" for="">Vida </label>
+          <input type="number" pattern="[1-9]" name="vida" class='form-control pt-0 pb-0'id="">
+        </div>
+      </div>
       <div class="row fs-sm">
-        <div class="col-lg-4 col-4 align-items-end d-grid  shadow-sm bg-body-tertiary  rounded pb-2 border border-1 ">
-          <label class="form-label mt-2" for="userName">Atk Fisico </label>
+        <div class="col-lg-4 col-4 align-items-end d-grid  shadow-sm   rounded pb-2 border border-1 ">
+          <label class="form-label mt-2" for="">Atk Fisico </label>
           <input type="number" pattern="[1-9]" class="form-control pt-0 pb-0 " name="atkfisico" required>
-          <label class="form-label mt-2" for="userName">Atk Especial </label>
+          <label class="form-label mt-2" for="">Atk Especial </label>
           <input type="number" pattern="[1-9]" class="form-control pt-0 pb-0 " name="atkespecial" required>
 
         </div>
-        <div class="col-lg-4 col-4 align-items-end d-grid  shadow-sm bg-body-tertiary  rounded pb-2 border border-1">
+        <div class="col-lg-4 col-4 align-items-end d-grid  shadow-sm   rounded pb-2 border border-1">
 
-          <label class="form-label mt-2" for="userName">Def Fisica </label>
+          <label class="form-label mt-2" for="">Def Fisica </label>
           <input type="number" pattern="[1-9]" class="form-control pt-0 pb-0 " name="deffisico" required>
-          <label class="form-label mt-2" for="userName">Def Especial </label>
+          <label class="form-label mt-2" for="">Def Especial </label>
           <input type="number" pattern="[1-9]" class="form-control pt-0 pb-0 " name="defespecial" required>
         </div>
-        <div class="col-lg-4 col-4 align-items-end d-grid  shadow-sm bg-body-tertiary  rounded pb-2 border border-1">
-          <label class="form-label mt-2" for="userName">Agilidad </label>
+        <div class="col-lg-4 col-4 align-items-end d-grid  shadow-sm   rounded pb-2 border border-1">
+          <label class="form-label mt-2" for="">Agilidad </label>
           <input type="number" pattern="[1-9]" class="form-control pt-0 pb-0 " name="agilidad" required>
-          <label class="form-label mt-2" for="userName">Destreza </label>
+          <label class="form-label mt-2" for="">Destreza </label>
           <input type="number" pattern="[1-9]" class="form-control pt-0 pb-0 " name="destreza" required>
         </div>
         <div class="col-12">
           <!-- MOVE A -->
-          <div class="row  shadow-sm bg-body-tertiary  rounded border-1 border pb-2 mt-2">
+          <div class="row  shadow-sm   rounded border-1 border pb-2 mt-2">
               <label class="form-label mt-2 mb-0" for=""><img width='64px' src="img/pokeball.png" style="width:20px!important;" id="icon-element-atk-a" /> Ataque 1</label>
               <div class="col-8 col-lg-3 mt-2">
 
@@ -100,7 +125,7 @@ $id_pj=$_GET['id_pj'];
               </div>
           </div>
           <!-- MOVE B -->
-          <div class="row  shadow-sm bg-body-tertiary  rounded border-1 border pb-2 mt-2">
+          <div class="row  shadow-sm   rounded border-1 border pb-2 mt-2">
               <label class="form-label mt-2 mb-0" for=""><img width='64px' src="img/pokeball.png" style="width:20px!important;" id="icon-element-atk-b" /> Ataque 2</label>
               <div class="col-8 col-lg-3 mt-2">
 
@@ -145,7 +170,7 @@ $id_pj=$_GET['id_pj'];
               </div>
           </div>
           <!-- MOVE C -->
-          <div class="row  shadow-sm bg-body-tertiary  rounded border-1 border pb-2 mt-2">
+          <div class="row  shadow-sm   rounded border-1 border pb-2 mt-2">
               <label class="form-label mt-2 mb-0" for=""><img width='64px' src="img/pokeball.png" style="width:20px!important;" id="icon-element-atk-c" /> Ataque 3</label>
               <div class="col-8 col-lg-3 mt-2">
 
@@ -190,7 +215,7 @@ $id_pj=$_GET['id_pj'];
               </div>
           </div>
          <!-- MOVE D -->
-         <div class="row  shadow-sm bg-body-tertiary  rounded border-1 border pb-2 mt-2">
+         <div class="row  shadow-sm   rounded border-1 border pb-2 mt-2">
               <label class="form-label mt-2 mb-0" for=""><img width='64px' src="img/pokeball.png" style="width:20px!important;" id="icon-element-atk-d" /> Ataque 4</label>
               <div class="col-8 col-lg-3 mt-2">
 
@@ -237,7 +262,7 @@ $id_pj=$_GET['id_pj'];
           
           
           <!-- MOVE E -->
-        <div class="row  shadow-sm bg-body-tertiary  rounded border-1 border pb-2 mt-2">
+        <div class="row  shadow-sm   rounded border-1 border pb-2 mt-2">
               <label class="form-label mt-2 mb-0" for=""><img width='64px' src="img/pokeball.png" style="width:20px!important;" id="icon-element-atk-e" /> Ataque 5</label>
               <div class="col-8 col-lg-3 mt-2">
 
@@ -283,7 +308,7 @@ $id_pj=$_GET['id_pj'];
           </div>
         
         <!-- MOVE F -->
-        <div class="row  shadow-sm bg-body-tertiary  rounded border-1 border pb-2 mt-2">
+        <div class="row  shadow-sm   rounded border-1 border pb-2 mt-2">
               <label class="form-label mt-2 mb-0" for=""><img width='64px' src="img/pokeball.png" style="width:20px!important;" id="icon-element-atk-f" /> Ataque 6</label>
               <div class="col-8 col-lg-3 mt-2">
 

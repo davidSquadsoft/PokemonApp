@@ -258,7 +258,7 @@ function formNewPokemon(e){
       let typeB=data?.types[1]?.type.name || ''
       document.getElementById('tipo-a').value=typeA
       document.getElementById('tipo-b').value=typeB
-      
+      document.getElementById('id-api-pokemon').value=data.id
       document.getElementById("flexCheckDefault").checked = false;
       document.getElementById('preview-sprite-pokemon').src=data.sprites.front_default
       document.getElementById('id-sprite-url-pokemon').value=data.sprites.front_default
@@ -276,10 +276,11 @@ function formNewPokemon(e){
         }
       });
         
-
+console.log(document.getElementById('id-sprite-url-pokemon').value)
   
   }catch(error){
     console.log(error)
+    document.getElementById('id-api-pokemon').value=''
     document.getElementById('is-shinny').classList.add('d-none')
     document.getElementById('preview-sprite-pokemon').src=''
     document.getElementById('id-sprite-url-pokemon').value=''

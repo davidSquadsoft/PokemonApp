@@ -70,7 +70,7 @@ $stmtRegisterPj = $mysqli->prepare("INSERT INTO `pj` (`id`,
 `atletismo`, 
 `alerta`, 
 `intimidacion`,
-inventario
+`inventario`
 ) VALUES 
 ( ?, ?, ?, ?, ?,  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)");
 $stmtRegisterPj->bind_param("issisiiiiiiiiiiiiiiiiiiiiiiiiiiis",
@@ -108,7 +108,9 @@ $alerta,
 $intimidacion,
 $inventario
 );
-$stmtRegisterPj->execute();
+ $stmtRegisterPj->execute();
+
+
 
 header("location:../dashboard");
 
